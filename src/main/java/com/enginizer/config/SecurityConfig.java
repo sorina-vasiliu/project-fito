@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/home**").access("hasAnyRole('ADMINISTRATOR','CONSULTANT','CLIENT')")
+                .antMatchers("/home**").access("hasAnyRole('ADMIN','CLIENT')")
                 .and().formLogin().loginPage("/login").failureUrl("/login?loginError=true")
                 .and().exceptionHandling().accessDeniedPage("/denied")
                 .and().logout().logoutUrl("/logout").and().csrf().disable();

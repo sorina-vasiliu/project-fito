@@ -9,7 +9,7 @@ package com.enginizer.security;
  * @author dragos.triteanu
  */
 public enum Role {
-    ADMINISTRATOR("ADMINISTRATOR"),
+    ADMIN("ADMIN"),
     CLIENT("CLIENT");
 
     private final String role;

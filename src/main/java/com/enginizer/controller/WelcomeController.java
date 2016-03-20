@@ -16,10 +16,9 @@
 
 package com.enginizer.controller;
 
-import java.util.Date;
-import java.util.Map;
-
+import com.enginizer.util.SessionUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +27,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WelcomeController {
 
     @Value("${application.message:Hello World}")
-    private String message = "Hello World";
+    private String message;
 
     @RequestMapping("/home")
     public String home(ModelMap modelMap) {
-        modelMap.put("time", new Date());
+        SessionUtils.populateModelWithAuthenticatedRole(modelMap);
         modelMap.put("message", this.message);
         return "welcome";
     }

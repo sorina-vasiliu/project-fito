@@ -1,0 +1,2 @@
+INSERT INTO `engineDB`.`users` (`created_on`, `mail`, `password`, `role`) VALUES ('2016-03-03', 'admin@mail.com', 'admin', 'ADMIN');
+INSERT INTO `engineDB`.`users` (`created_on`, `mail`, `password`, `role`) VALUES ('2016-03-03','client@mail.com', 'client', 'CLIENT');
