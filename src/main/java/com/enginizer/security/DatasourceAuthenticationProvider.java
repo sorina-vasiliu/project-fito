@@ -38,7 +38,7 @@ public class DatasourceAuthenticationProvider implements AuthenticationProvider 
             throw new UsernameNotFoundException("Failed to authenticate user");
         }
 
-        if(!retrievedUser.getPassword().equals(password)){
+        if (!retrievedUser.getPassword().equals(password)) {
             throw new UsernameNotFoundException("Password is not ok");
         }
 

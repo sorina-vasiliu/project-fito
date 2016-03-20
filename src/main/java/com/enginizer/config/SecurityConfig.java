@@ -14,22 +14,22 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder authBuilder) throws Exception {
-		authBuilder.authenticationProvider(datasourceAuthenticationProvider());
-	}
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/home**").access("hasAnyRole('ADMINISTRATOR','CONSULTANT','CLIENT')")
+                .and().formLogin().loginPage("/login").failureUrl("/login?loginError=true")
+                .and().exceptionHandling().accessDeniedPage("/denied")
+                .and().logout().logoutUrl("/logout").and().csrf().disable();
+    }
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-	  http.authorizeRequests()
-		.antMatchers("/home**").access("hasAnyRole('ADMINISTRATOR','CONSULTANT','CLIENT')")
-		.and().formLogin().loginPage("/login").failureUrl("/login?loginError=true")
-		.and().exceptionHandling().accessDeniedPage("/denied")
-		.and().logout().logoutUrl("/logout").and().csrf().disable();
-	}
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder authBuilder) throws Exception {
+        authBuilder.authenticationProvider(datasourceAuthenticationProvider());
+    }
 
-	@Bean
-	public AuthenticationProvider datasourceAuthenticationProvider(){
-	    return new DatasourceAuthenticationProvider();
+    @Bean
+    public AuthenticationProvider datasourceAuthenticationProvider() {
+        return new DatasourceAuthenticationProvider();
     }
 }

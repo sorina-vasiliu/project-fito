@@ -10,19 +10,19 @@ import java.sql.Timestamp;
  * Entity class for modeling a user, in the db 'users' table.
  */
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userId")
-    private int userId;
+    private Integer userId;
 
-    @Column(name="mail", nullable = false)
+    @Column(name = "mail", nullable = false)
     @Email(message = "client.email.notEmail")
     private String mail;
 
-    @Column(name="password", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -31,14 +31,14 @@ public class User {
     @Column(name = "lastLogin", nullable = true)
     private Timestamp lastLogin;
 
-    @Column(name = "createdOn",nullable = true)
+    @Column(name = "createdOn", nullable = true)
     private Timestamp createdOn;
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

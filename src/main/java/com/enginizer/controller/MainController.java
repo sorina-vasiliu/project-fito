@@ -16,27 +16,27 @@ public class MainController {
     private static final Logger LOG = LoggerFactory.getLogger(MainController.class);
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(@RequestParam(value = "loginError" , required = false) boolean loginError, ModelMap modelMap){
-        if(loginError == true){
-            LOG.info("loginError="+loginError);
+    public String login(@RequestParam(value = "loginError", required = false) boolean loginError, ModelMap modelMap) {
+        if (loginError == true) {
+            LOG.info("loginError=" + loginError);
 
-            modelMap.addAttribute("loginError",loginError);
+            modelMap.addAttribute("loginError", loginError);
         }
         return "loginPage";
     }
 
-    @RequestMapping(value = { "/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String welcomePage() {
         return "redirect:/home";
     }
 
     @RequestMapping(value = "/denied", method = RequestMethod.GET)
-    public String denied(){
+    public String denied() {
         return "accessDeniedPage";
     }
 
     @RequestMapping(value = "/denied", method = RequestMethod.POST)
-    public String deniedPost(){
+    public String deniedPost() {
         return "accessDeniedPage";
     }
 }

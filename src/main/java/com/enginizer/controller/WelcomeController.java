@@ -27,14 +27,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelcomeController {
 
-	@Value("${application.message:Hello World}")
-	private String message = "Hello World";
+    @Value("${application.message:Hello World}")
+    private String message = "Hello World";
 
-	@RequestMapping("/home")
-	public String home(ModelMap modelMap){
-		modelMap.put("time", new Date());
-		modelMap.put("message", this.message);
-		return "welcome";
-	}
+    @RequestMapping("/home")
+    public String home(ModelMap modelMap) {
+        modelMap.put("time", new Date());
+        modelMap.put("message", this.message);
+        return "welcome";
+    }
 
 }
