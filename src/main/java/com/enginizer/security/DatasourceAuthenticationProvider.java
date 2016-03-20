@@ -1,7 +1,6 @@
 package com.enginizer.security;
 
 import com.enginizer.model.entities.User;
-import com.enginizer.repository.UserRepository;
 import com.enginizer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -18,7 +17,6 @@ import java.util.List;
 
 /**
  * An authentication provider, that provide auth via a datasource.
- * Created by Dragos on 10/21/2015.
  */
 @Component
 public class DatasourceAuthenticationProvider implements AuthenticationProvider {

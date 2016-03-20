@@ -2,6 +2,7 @@ package com.enginizer.service;
 
 import com.enginizer.model.entities.User;
 import com.enginizer.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,13 +11,10 @@ import org.springframework.stereotype.Service;
 @Service("userService")
 public class UserService {
 
+    @Autowired
     private UserRepository userRepository;
 
-    public UserService(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
-
-    public User findByEmailAddress(final String mail){
+    public User findByEmailAddress(final String mail) {
         return userRepository.findByMail(mail);
     }
 
