@@ -6,3 +6,4 @@ target/**
 *.iml
 .settings/**
 src/main/webapp/resources/libs/**
+src/main/resources/static/libs/**
