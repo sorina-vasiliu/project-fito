@@ -17,8 +17,6 @@
 package com.enginizer.controller;
 
 import com.enginizer.util.SessionUtils;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,14 +24,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelcomeController {
 
-    @Value("${application.message:Hello World}")
-    private String message;
-
     @RequestMapping("/home")
     public String home(ModelMap modelMap) {
         SessionUtils.populateModelWithAuthenticatedRole(modelMap);
-        modelMap.put("message", this.message);
-        return "welcome";
+        return "landing-page";
     }
-
 }

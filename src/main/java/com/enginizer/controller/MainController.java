@@ -22,7 +22,7 @@ public class MainController {
 
             modelMap.addAttribute("loginError", loginError);
         }
-        return "loginPage";
+        return "login-page";
     }
 
     @RequestMapping(value = {"/"}, method = RequestMethod.GET)
@@ -32,11 +32,11 @@ public class MainController {
 
     @RequestMapping(value = "/denied", method = RequestMethod.GET)
     public String denied() {
-        return "accessDeniedPage";
+        return "403-page";
     }
 
     @RequestMapping(value = "/denied", method = RequestMethod.POST)
     public String deniedPost() {
-        return "accessDeniedPage";
+        return "403-page";
     }
 }
