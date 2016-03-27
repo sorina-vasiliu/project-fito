@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.enginizer.controller;
+package com.fito.controller;
 
-import com.enginizer.util.SessionUtils;
+import com.fito.util.SessionUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;

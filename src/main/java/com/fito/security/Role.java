@@ -1,4 +1,4 @@
-package com.enginizer.security;
+package com.fito.security;
 
 /**
  * Enum class housing the available authorities for the application.

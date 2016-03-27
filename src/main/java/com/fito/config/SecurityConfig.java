@@ -1,6 +1,6 @@
-package com.enginizer.config;
+package com.fito.config;
 
-import com.enginizer.security.DatasourceAuthenticationProvider;
+import com.fito.security.DatasourceAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

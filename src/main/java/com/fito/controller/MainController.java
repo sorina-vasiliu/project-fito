@@ -1,4 +1,4 @@
-package com.enginizer.controller;
+package com.fito.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

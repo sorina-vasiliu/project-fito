@@ -1,7 +1,7 @@
-package com.enginizer.util;
+package com.fito.util;
 
-import com.enginizer.model.entities.User;
-import com.enginizer.security.Role;
+import com.fito.model.entities.User;
+import com.fito.security.Role;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,7 +1,7 @@
-package com.enginizer.security;
+package com.fito.security;
 
-import com.enginizer.model.entities.User;
-import com.enginizer.service.UserService;
+import com.fito.model.entities.User;
+import com.fito.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,5 +1,5 @@
 
-package com.enginizer;
+package com.fito;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

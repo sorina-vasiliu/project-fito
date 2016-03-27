@@ -1,7 +1,7 @@
-package com.enginizer.repository;
+package com.fito.repository;
 
 
-import com.enginizer.model.entities.User;
+import com.fito.model.entities.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

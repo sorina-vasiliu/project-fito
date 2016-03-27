@@ -1,6 +1,6 @@
-package com.enginizer.model.entities;
+package com.fito.model.entities;
 
-import com.enginizer.security.Role;
+import com.fito.security.Role;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
