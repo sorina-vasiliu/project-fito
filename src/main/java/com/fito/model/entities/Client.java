@@ -3,7 +3,7 @@ package com.fito.model.entities;
 import javax.persistence.*;
 
 /**
- * Created by Dragos on 3/27/2016.
+ * Entity class for modeling a user, in the db 'client' table.
  */
 @Entity
 @Table(name = "client")

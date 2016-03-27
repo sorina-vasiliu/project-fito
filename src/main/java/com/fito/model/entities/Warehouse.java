@@ -4,20 +4,20 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
- * Created by Dragos on 3/27/2016.
+ * Entity class for modeling a user, in the db 'warehouse' table.
  */
 @Entity
-@Table(name = "workhouse")
+@Table(name = "warehouse")
 @PrimaryKeyJoinColumn(name="workhouseId", referencedColumnName="id")
-public class Workhouse extends User {
+public class Warehouse extends User {
     @Column(name = "location", nullable = false)
     private String location;
 
-    @OneToMany(mappedBy="workhouse")
+    @OneToMany(mappedBy="warehouse")
     private List<Agent> agents;
 
-    @OneToMany(mappedBy = "workhouse")
-    private List<WorkhouseProduct> workhouseProducts;
+    @OneToMany(mappedBy = "warehouse")
+    private List<WarehouseProduct> warehouseProducts;
 
     public String getLocation() {
         return location;
@@ -35,11 +35,11 @@ public class Workhouse extends User {
         this.agents = agents;
     }
 
-    public List<WorkhouseProduct> getWorkhouseProducts() {
-        return workhouseProducts;
+    public List<WarehouseProduct> getWarehouseProducts() {
+        return warehouseProducts;
     }
 
-    public void setWorkhouseProducts(List<WorkhouseProduct> workhouseProducts) {
-        this.workhouseProducts = workhouseProducts;
+    public void setWarehouseProducts(List<WarehouseProduct> warehouseProducts) {
+        this.warehouseProducts = warehouseProducts;
     }
 }

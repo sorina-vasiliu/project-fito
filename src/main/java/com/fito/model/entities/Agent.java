@@ -1,11 +1,9 @@
 package com.fito.model.entities;
 
-import ch.qos.logback.classic.db.names.ColumnName;
-
 import javax.persistence.*;
 
 /**
- * Created by Dragos on 3/27/2016.
+ * Entity class for modeling a user, in the db 'agent' table.
  */
 @Entity
 @Table(name = "agent")
@@ -15,8 +13,8 @@ public class Agent extends User{
     private String location;
 
     @ManyToOne
-    @JoinColumn(name="workhouse_id", nullable = false)
-    private Workhouse workhouse;
+    @JoinColumn(name="warehouse_id", nullable = false)
+    private Warehouse warehouse;
 
     @OneToOne(mappedBy="agent",cascade=CascadeType.ALL)
     private Client client;
@@ -29,12 +27,12 @@ public class Agent extends User{
         this.location = location;
     }
 
-    public Workhouse getWorkhouse() {
-        return workhouse;
+    public Warehouse getWarehouse() {
+        return warehouse;
     }
 
-    public void setWorkhouse(Workhouse workhouse) {
-        this.workhouse = workhouse;
+    public void setWarehouse(Warehouse warehouse) {
+        this.warehouse = warehouse;
     }
 
     public Client getClient() {

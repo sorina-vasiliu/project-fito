@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
- * Created by Dragos on 3/27/2016.
+ * Entity class for modeling a user, in the db 'product' table.
  */
 @Entity
 @Table(name = "product")
@@ -24,7 +24,7 @@ public class Product {
     private String details;
 
     @OneToMany(mappedBy = "product")
-    private List<WorkhouseProduct> workhouseProducts;
+    private List<WarehouseProduct> warehouseProducts;
 
     public int getProductId() {
         return productId;
@@ -58,11 +58,11 @@ public class Product {
         this.details = details;
     }
 
-    public List<WorkhouseProduct> getWorkhouseProducts() {
-        return workhouseProducts;
+    public List<WarehouseProduct> getWarehouseProducts() {
+        return warehouseProducts;
     }
 
-    public void setWorkhouseProducts(List<WorkhouseProduct> workhouseProducts) {
-        this.workhouseProducts = workhouseProducts;
+    public void setWarehouseProducts(List<WarehouseProduct> warehouseProducts) {
+        this.warehouseProducts = warehouseProducts;
     }
 }

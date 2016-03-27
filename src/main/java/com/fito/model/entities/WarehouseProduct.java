@@ -3,23 +3,23 @@ package com.fito.model.entities;
 import javax.persistence.*;
 
 /**
- * Created by Dragos on 3/27/2016.
+ * Entity class for modeling a user, in the db 'warehouseproduct' table.
  */
 @Entity
-@Table(name = "workhouseproduct")
-public class WorkhouseProduct {
+@Table(name = "warehouseproduct")
+public class WarehouseProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "workhouseProductId")
-    private Integer workhouseProductId;
+    @Column(name = "warehouseProductId")
+    private Integer warehouseProductId;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "workhouse_id")
-    private Workhouse workhouse;
+    @JoinColumn(name = "warehouse_id")
+    private Warehouse warehouse;
 
     @Column(name = "price", nullable = false)
     private double price;
@@ -35,12 +35,12 @@ public class WorkhouseProduct {
         this.product = product;
     }
 
-    public Workhouse getWorkhouse() {
-        return workhouse;
+    public Warehouse getWarehouse() {
+        return warehouse;
     }
 
-    public void setWorkhouse(Workhouse workhouse) {
-        this.workhouse = workhouse;
+    public void setWarehouse(Warehouse workhouse) {
+        this.warehouse = workhouse;
     }
 
     public double getPrice() {
@@ -59,12 +59,12 @@ public class WorkhouseProduct {
         this.quantity = quantity;
     }
 
-    public Integer getWorkhouseProductId() {
-        return workhouseProductId;
+    public Integer getWarehouseProductId() {
+        return warehouseProductId;
     }
 
-    public void setWorkhouseProductId(Integer workhouseProductId) {
-        this.workhouseProductId = workhouseProductId;
+    public void setWarehouseProductId(Integer warehouseProductId) {
+        this.warehouseProductId = warehouseProductId;
     }
 }
 
