@@ -4,7 +4,13 @@
             "name": "Home",
             "url": "./home",
             "id": "home"
+        },
+        {
+           "name" : "Depozite",
+            "url": "./warehouse",
+            "id" : "warehouse"
         }
+
     ],
     "CLIENT": [
         {

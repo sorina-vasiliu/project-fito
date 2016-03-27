@@ -11,12 +11,13 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "users")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userId")
-    private Integer userId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "mail", nullable = false)
     @Email(message = "client.email.notEmail")
@@ -34,12 +35,12 @@ public class User {
     @Column(name = "createdOn", nullable = true)
     private Timestamp createdOn;
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setId(Integer userId) {
+        this.id = userId;
     }
 
     public String getMail() {

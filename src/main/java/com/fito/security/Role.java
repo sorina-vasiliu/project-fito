@@ -10,6 +10,8 @@ package com.fito.security;
  */
 public enum Role {
     ADMIN("ADMIN"),
+    WAREHOUSE("WAREHOUSE"),
+    AGENT("AGENT"),
     CLIENT("CLIENT");
 
     private final String role;
