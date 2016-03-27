@@ -24,7 +24,7 @@ public class WarehouseController {
     @Autowired
     private WarehouseService workhouseService;
 
-    @RequestMapping(value = "/warehouse", method = RequestMethod.GET)
+    @RequestMapping(value = "/warehouses", method = RequestMethod.GET)
     public String getAllWorkhouses(ModelMap modelMap) {
 
         SessionUtils.populateModelWithAuthenticatedRole(modelMap);

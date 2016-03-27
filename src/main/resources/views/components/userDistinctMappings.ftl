@@ -7,8 +7,18 @@
         },
         {
            "name" : "Depozite",
-            "url": "./warehouse",
+            "url": "./warehouses",
             "id" : "warehouse"
+        },
+        {
+           "name" : "Agenti",
+            "url" : "./agents",
+            "id" : "agent"
+        },
+        {
+           "name" : "Clienti",
+           "url"  : "./clients",
+           "id" : "client"
         }
 
     ],
