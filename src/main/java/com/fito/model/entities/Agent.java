@@ -9,8 +9,9 @@ import javax.persistence.*;
 @Table(name = "agent")
 @PrimaryKeyJoinColumn(name="agentId", referencedColumnName="id")
 public class Agent extends User{
-    @Column(name="location", nullable = false)
-    private String location;
+    @ManyToOne
+    @JoinColumn(name="locality_id", nullable = false)
+    private Locality locality;
 
     @ManyToOne
     @JoinColumn(name="warehouse_id", nullable = false)
@@ -18,14 +19,6 @@ public class Agent extends User{
 
     @OneToOne(mappedBy="agent",cascade=CascadeType.ALL)
     private Client client;
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
 
     public Warehouse getWarehouse() {
         return warehouse;
@@ -41,5 +34,13 @@ public class Agent extends User{
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public Locality getLocality() {
+        return locality;
+    }
+
+    public void setLocality(Locality locality) {
+        this.locality = locality;
     }
 }

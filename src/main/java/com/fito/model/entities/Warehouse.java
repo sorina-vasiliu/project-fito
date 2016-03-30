@@ -10,22 +10,16 @@ import java.util.List;
 @Table(name = "warehouse")
 @PrimaryKeyJoinColumn(name="workhouseId", referencedColumnName="id")
 public class Warehouse extends User {
-    @Column(name = "location", nullable = false)
-    private String location;
+
+    @ManyToOne
+    @JoinColumn(name="locality_id", nullable = false)
+    private Locality locality;
 
     @OneToMany(mappedBy="warehouse")
     private List<Agent> agents;
 
     @OneToMany(mappedBy = "warehouse")
     private List<WarehouseProduct> warehouseProducts;
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
 
     public List<Agent> getAgents() {
         return agents;
@@ -41,5 +35,13 @@ public class Warehouse extends User {
 
     public void setWarehouseProducts(List<WarehouseProduct> warehouseProducts) {
         this.warehouseProducts = warehouseProducts;
+    }
+
+    public Locality getLocality() {
+        return locality;
+    }
+
+    public void setLocality(Locality locality) {
+        this.locality = locality;
     }
 }
