@@ -11,7 +11,7 @@
         <#list warehouseList as warehouse>
         <tr class="tableRow">
             <td>${warehouse.mail}</td>
-            <td>${warehouse.location}</td>
+            <td>${warehouse.locality.name}</td>
              <td>
                 <#if warehouse.consultant?has_content>
                     ${warehouse.consultant?size}

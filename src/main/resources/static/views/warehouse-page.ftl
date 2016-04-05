@@ -10,7 +10,7 @@
 <body>
 <input id="userRole" type="hidden" class="hidden" value="${userRole}" />
 <@navbarRenderer.renderNavbar userRole="${userRole}" activePage="warehouse"/>
-
+<#if userRole=="ADMIN">
 <div class="container">
     <div class="col-md-11">
         <div class="col-md-2 col-md-offset-0 h2 ">
@@ -23,7 +23,7 @@
     <div class="warehouse-table generic-table">
     <@workhouseTable.renderTable warehouses/>
     </div>
-
 </div>
+</#if>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.fito.model.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Entity class for modeling a user, in the db 'agent' table.
@@ -17,8 +18,8 @@ public class Agent extends User{
     @JoinColumn(name="warehouse_id", nullable = false)
     private Warehouse warehouse;
 
-    @OneToOne(mappedBy="agent",cascade=CascadeType.ALL)
-    private Client client;
+    @OneToMany(mappedBy="agent")
+    private List<Client> clients;
 
     public Warehouse getWarehouse() {
         return warehouse;
@@ -28,12 +29,12 @@ public class Agent extends User{
         this.warehouse = warehouse;
     }
 
-    public Client getClient() {
-        return client;
+    public List<Client> getClient() {
+        return clients;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(List<Client> client) {
+        this.clients = clients;
     }
 
     public Locality getLocality() {

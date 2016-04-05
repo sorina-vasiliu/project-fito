@@ -11,7 +11,7 @@ import java.util.List;
 public class Locality {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "locality_id")
     private int localityId;
 
     @Column(name = "name")

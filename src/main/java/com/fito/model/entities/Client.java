@@ -15,7 +15,7 @@ public class Client extends User {
     @Column(name="orderLimit", nullable = false)
     private int orderLimit;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="agent_id", nullable = false)
     private Agent agent;
 
